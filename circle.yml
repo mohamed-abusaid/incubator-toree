@@ -5,7 +5,7 @@ machine:
 #
 test:
   override:
-    - cd ./incubator-toree
+    #- cd ./incubator-toree
     - pwd
     - make build
     - make dist
