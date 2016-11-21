@@ -1,0 +1,8 @@
+machine:
+  environment:
+    SBT_VERSION: 0.13.9
+
+test:
+  override:
+    - cd ./incubator-toree
+    - make build 
