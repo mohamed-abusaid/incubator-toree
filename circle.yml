@@ -3,7 +3,7 @@ machine:
   pre:
     - curl -sSL https://s3.amazonaws.com/circle-downloads/install-circleci-docker.sh | bash -s -- 1.10.0
     - sudo apt-get install gnupg -y
-    - sudo apt-get install gnupg -y
+    - sudo ln -s /usr/bin/gpg /usr/local/bin/gpg
   services:
     - docker
 
