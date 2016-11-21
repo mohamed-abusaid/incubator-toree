@@ -1,0 +1,22 @@
+#branches:
+#    only:
+#     - /feature\/.*/
+#     - master
+machine:
+  pre:
+    - curl -sSL https://s3.amazonaws.com/circle-downloads/install-circleci-docker.sh | bash -s -- 1.10.0
+    - sudo apt-get install gnupg -y
+    - sudo ln -s /usr/bin/gpg /usr/local/bin/gpg
+  services:
+    - docker
+
+  environment:
+    SBT_VERSION: 0.13.9
+#
+test:
+  override:
+    #- cd ./incubator-toree
+    - pwd
+    - make build
+    - make dist
+    - make release
